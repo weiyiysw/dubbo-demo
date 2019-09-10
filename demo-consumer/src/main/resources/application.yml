@@ -1,0 +1,13 @@
+server:
+  port: 9090
+spring:
+  application:
+    name: demo-consumer
+nacos:
+  host: autopai-cloud-nacos-local
+  port: 8848
+dubbo:
+  application:
+    name: demo-consumer
+  registry:
+    address: nacos://${nacos.host}:${nacos.port}
