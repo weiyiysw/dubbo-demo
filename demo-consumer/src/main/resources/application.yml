@@ -9,5 +9,12 @@ nacos:
 dubbo:
   application:
     name: demo-consumer
+  protocol:
+    name: dubbo
+    port: -1
   registry:
     address: nacos://${nacos.host}:${nacos.port}
+demo:
+  service:
+    version: 1.0.0
+    name: demo-server3

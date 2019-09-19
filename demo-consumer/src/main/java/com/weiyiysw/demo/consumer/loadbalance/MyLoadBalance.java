@@ -28,7 +28,10 @@ public class MyLoadBalance implements LoadBalance {
         }
         for (Invoker invoker : invokers) {
             System.out.println("invoker port: " + invoker.getUrl().getPort());
-            if (invoker.getUrl().getPort()  == 20881) {
+            System.out.println(invocation.getAttachment("test"));
+            String portStr = invocation.getAttachment("port");
+            int port = Integer.parseInt(portStr);
+            if (invoker.getUrl().getPort() == port) {
                 return invoker;
             }
         }
