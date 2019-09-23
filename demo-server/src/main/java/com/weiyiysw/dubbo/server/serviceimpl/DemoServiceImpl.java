@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Value;
  * @date 2019/9/10
  */
 
-@Service(version = "${demo.service.version}")
+@Service(version = "${demo.service.version}", filter = "myFilter")
 public class DemoServiceImpl implements DemoService {
 
     @Value("${demo.service.name}")
